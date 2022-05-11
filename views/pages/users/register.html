@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <title>"首页"</title>
     <link rel="stylesheet" type="text/css" href="/static/css/login_register.css">
+    <script src ="/static/script/jquery-1.7.2.js"></script>
     <script>
-        $("#msg").hide();
-        if ("{{.}}" == "用户名已存在") {
-          $("#msg").show();
-        }
+        $(function () {
+            $("#msg").hide();
+            if ("{{.}}" == "用户名已存在") {
+                $("#msg").show();
+            }
+
+            $("#username").change(function (){ // 输入用户名绑定时间
+                var username = $(this).val();
+                var url = "/checkUserName";
+                var param = {username:username};
+                $.post(url,param,function (res){ // 发送ajax请求
+                    $("#msg").show();
+                    $("#msg").html(res);
+                });
+            });
+        });
+
     </script>
 </head>
 <body>
@@ -21,7 +35,8 @@
         <fieldset>
             <p>
                 <label>用户名：</label>
-                <input type="text"  placeholder="用户名" name="username">
+                <input type="text"  placeholder="用户名" name="username" id="username">
+                <span class="errorMsg" id="msg">{{.}}</span>
             </p>
 
             <p>
@@ -32,7 +47,7 @@
             <p>
                 <input id="submit" type="submit" value="注册">
                 <a class ="login_to_reg" href="http://127.0.0.1:8080/loginPage">已有账号，去登录</a>
-                <span class="errorMsg" id="msg">{{.}}</span>
+
             </p>
 
         </fieldset>

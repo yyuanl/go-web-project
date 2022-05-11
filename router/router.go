@@ -14,8 +14,9 @@ func Router() {
 	http.HandleFunc("/loginPage", controller.LoginPageHandle)
 
 	http.HandleFunc("/registerPage", controller.RegisterPageHandle)
-	http.HandleFunc("/login", controller.Login)
+	http.HandleFunc("/login", controller.LoginHandle)
 
-	http.HandleFunc("/register", controller.Register)
+	http.HandleFunc("/register", controller.RegisterHandle)
 
+	http.HandleFunc("/checkUserName", controller.CheckUserIsExistHandle)
 }

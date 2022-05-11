@@ -35,5 +35,6 @@ func Init() {
 		panic(err)
 	}
 	bytes, _ := json.Marshal(GlobalConfigInstance)
-	fmt.Printf("init config susscess,config is %s", string(bytes))
+	str := "--------------------------------------------------------------------------------------"
+	fmt.Printf("init config susscess,config is %s\n"+str+"\n\n", string(bytes))
 }

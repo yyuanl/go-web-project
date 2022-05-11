@@ -18,3 +18,13 @@ func GetUserInfo(cond *models.User) ([]*models.User, error) {
 	err := query.Find(&res).Error
 	return res, err
 }
+
+// InsertBatchUserAccount 批量插入用户
+func InsertBatchUserAccount(users []*models.User) error {
+	if users == nil {
+		return nil
+	}
+	db := DbInstance.UserAccountManagerDB.Table("user_info")
+	err := db.Create(&users).Error
+	return err
+}
