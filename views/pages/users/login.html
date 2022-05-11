@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"首页"</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/login_register.css">
+    <script src ="/static/script/jquery-1.7.2.js"></script>
+    <script>
+      $(function () {
+
+        if ("{{.}}" == "用户名或密码不正确") {
+          $("#login_msg").text("用户名或密码不正确");
+        }
+        if ("{{.}}" == "判断用户是否存在错误") {
+          $("#login_msg").text("判断用户是否存在错误,请重试");
+        }
+      });
+
+    </script>
+</head>
+<body>
+<div id="register_form">
+
+    <h1>欢迎登录</h1>
+    <b></b>
+    <div class="msg_cont">
+        <span class="errorMsg" id="login_msg">请输入用户名和密码</span>
+    </div>
+
+    <form action="http://127.0.0.1:8080/login" method="post">
+        <fieldset>
+            <p>
+                <label>用户名：</label>
+                <input type="text"  placeholder="用户名" name="username">
+            </p>
+
+            <p>
+                <label>密码：</label>
+                <input type="password" placeholder="密码" name="password">
+            </p>
+
+            <p>
+                <input id="submit" type="submit" value="登录">
+                <a class ="login_to_reg" href="http://127.0.0.1:8080/registerPage">立即注册</a>
+            </p>
+
+        </fieldset>
+
+
+    </form>
+</div>
+
+</body>
+</html>

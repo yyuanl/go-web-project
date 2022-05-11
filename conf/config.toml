@@ -1,0 +1,8 @@
+[UserAccountManagerConfig]
+MysqlHost     = "127.0.0.1"
+MysqlPort     = "3306"
+MysqlUser     = "root"
+MysqlPassword = "123456"
+DB  = "user_center"
+TimeOut = "5s"
+Charset = "utf8"

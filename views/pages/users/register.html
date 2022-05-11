@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"首页"</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/login_register.css">
+    <script>
+        $("#msg").hide();
+        if ("{{.}}" == "用户名已存在") {
+          $("#msg").show();
+        }
+    </script>
+</head>
+<body>
+
+
+<div id="register_form">
+    <h1>欢迎注册</h1>
+
+    <form action="http://127.0.0.1:8080/register" method="post">
+        <fieldset>
+            <p>
+                <label>用户名：</label>
+                <input type="text"  placeholder="用户名" name="username">
+            </p>
+
+            <p>
+                <label>密码：</label>
+                <input type="password" placeholder="密码" name="password">
+            </p>
+
+            <p>
+                <input id="submit" type="submit" value="注册">
+                <a class ="login_to_reg" href="http://127.0.0.1:8080/loginPage">已有账号，去登录</a>
+                <span class="errorMsg" id="msg">{{.}}</span>
+            </p>
+
+        </fieldset>
+
+    </form>
+</div>
+
+</body>
+</html>
