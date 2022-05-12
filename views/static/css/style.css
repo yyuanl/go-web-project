@@ -61,7 +61,7 @@ body{
     position:relative;
     margin-left: 210px;
     top: 25px;
-    color: red;
+    color: green;
 }
 
 /*.msg_cont {*/
@@ -78,11 +78,14 @@ body{
 
 #header {
     height: 82px;
-    width: 1200px;
+    /*width: 1200px;*/
+    widthth: 95%;
     background-color: #72BCB5;
-    margin-left: 60px;
+    margin-left: 30px;
+    margin-right: 30px;
     margin-top: 20px;
     position: relative;
+    /*border: 1px solid red;*/
 }
 
 #jump{

@@ -13,12 +13,14 @@ func LoginHandle(w http.ResponseWriter, r *http.Request) {
 	isExist, err := services.JudgeUserIsExist(userName)
 	if err != nil {
 		log.Printf("判断用户是否存在错误：%+v", err)
+		//style := `<front style='color:red'>` + "判断用户是否存在错误" + `</front>`
 		SendHtmlTemplateData(loginHtmlPath, w, "判断用户是否存在错误")
 		return
 	}
 	if isExist {
 		w.Write([]byte("登录成功！")) // 应该展示登录成功页面
 	} else {
+		//style := "<front style='color:red'>" + "用户名或密码不正确" + "</front>"
 		SendHtmlTemplateData(loginHtmlPath, w, "用户名或密码不正确")
 	}
 

@@ -9,9 +9,12 @@
       $(function () {
 
         if ("{{.}}" == "用户名或密码不正确") {
-          $("#login_msg").text("用户名或密码不正确");
+          // $("#login_msg").text("用户名或密码不正确");
+            $("#login_msg").html("<front style='color:red'>用户名或密码不正确,请重新输入</front>");
+
         }
         if ("{{.}}" == "判断用户是否存在错误") {
+
           $("#login_msg").text("判断用户是否存在错误,请重试");
         }
       });
