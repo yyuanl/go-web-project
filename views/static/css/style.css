@@ -76,3 +76,14 @@ body{
 /*}*/
 
 
+#header {
+    height: 82px;
+    width: 1200px;
+}
+
+.show_word{
+    font-size: 60px;
+    float: left;
+}
+
+
