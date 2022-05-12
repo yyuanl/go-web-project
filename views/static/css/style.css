@@ -79,11 +79,31 @@ body{
 #header {
     height: 82px;
     width: 1200px;
+    background-color: #72BCB5;
+    margin-left: 60px;
+    margin-top: 20px;
+    position: relative;
+}
+
+#jump{
+    /*margin-top: 30px;*/
+    /*background-color: #7f0055;*/
+
+    position: absolute;
+    /*margin-top: 50px !important;*/
+    margin-top: 25px;
+    /*margin-right: 60px;*/
+    right: 60px;
 }
 
 .show_word{
-    font-size: 60px;
+    font-size: 30px;
     float: left;
+    margin-left: 40px;
+    width: 500px;
+    margin-top: 15px;
 }
+
+
 
 
